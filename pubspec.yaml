@@ -1,8 +1,7 @@
 name: sparrow_ui
 description: Sparrow UI Components Library for Flutter.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/sparrow-genius/sparrow_ui
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flui: ^0.9.2
+  flutter_screenutil: ^2.1.0
+  sparrow_utils: ^0.0.2
 
 dev_dependencies:
   flutter_test:
