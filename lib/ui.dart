@@ -19,7 +19,7 @@ Color rgba(int red, int green, int blue, double opacity) {
   return Color.fromRGBO(red, green, blue, opacity);
 }
 
-class HGUI {
+class SPUI {
   // 我们自己设定的虚拟屏幕宽度750
   static double _customScreenWidth = 750.0;
 
@@ -40,14 +40,14 @@ class HGUI {
   static void init() {
     Size physicalSize = getPhysicalSize();
     ScreenUtil.init(
-      width: HGUI._customScreenWidth,
+      width: SPUI._customScreenWidth,
       height:
-          HGUI._customScreenWidth * physicalSize.height / physicalSize.width,
+          SPUI._customScreenWidth * physicalSize.height / physicalSize.width,
     );
   }
 
   static double getCustomSize(double defaultLength) {
-    return defaultLength * HGUI.getAdapterRatioRatio();
+    return defaultLength * SPUI.getAdapterRatioRatio();
   }
 
   /// 屏幕物理像素

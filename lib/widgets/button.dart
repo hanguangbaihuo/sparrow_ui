@@ -1,6 +1,6 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGButton extends StatelessWidget {
+class SPButton extends StatelessWidget {
   final Function onTap;
   final double width;
   final double height;
@@ -8,7 +8,7 @@ class HGButton extends StatelessWidget {
   final Color color;
   final Color contentColor;
   final BoxBorder border;
-  HGButton({
+  SPButton({
     Key key,
     this.onTap,
     this.width,
@@ -45,11 +45,11 @@ class HGButton extends StatelessWidget {
   }
 }
 
-class HGButton80 extends HGButton {
+class SPButton80 extends SPButton {
   final Function onTap;
   final double width;
   final String content;
-  HGButton80({
+  SPButton80({
     Key key,
     this.onTap,
     this.width,
@@ -69,11 +69,11 @@ class HGButton80 extends HGButton {
         );
 }
 
-class HGButton60 extends HGButton {
+class SPButton60 extends SPButton {
   final Function onTap;
   final double width;
   final String content;
-  HGButton60({
+  SPButton60({
     Key key,
     this.onTap,
     this.width,

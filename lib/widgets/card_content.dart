@@ -1,11 +1,11 @@
 import 'package:sparrow_ui/ui.dart';
-import './hg_card.dart';
+import './card.dart';
 
-class HGCardContent extends StatelessWidget {
+class SPCardContent extends StatelessWidget {
   final Widget child;
   final Color backgroundColor;
 
-  const HGCardContent({
+  const SPCardContent({
     Key key,
     this.child,
     this.backgroundColor,
@@ -13,7 +13,7 @@ class HGCardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HGCard(
+    return SPCard(
       backgroundColor: backgroundColor,
       child: Padding(
         padding: EdgeInsets.all(20.rpx),

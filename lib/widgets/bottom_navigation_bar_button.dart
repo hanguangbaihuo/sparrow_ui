@@ -1,12 +1,12 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGBottomNavigationBarButton extends StatelessWidget {
+class SPBottomNavigationBarButton extends StatelessWidget {
   final Function onPressed;
   final Function onLongPress;
   final String content;
   final Color color;
   final Color backgroundColor;
-  const HGBottomNavigationBarButton({
+  const SPBottomNavigationBarButton({
     Key key,
     @required this.content,
     @required this.onPressed,

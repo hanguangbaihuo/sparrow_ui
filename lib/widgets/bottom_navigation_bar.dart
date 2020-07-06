@@ -1,9 +1,9 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGBottomNavigationBar extends StatelessWidget {
+class SPBottomNavigationBar extends StatelessWidget {
   final List<Widget> children;
   final Color backgroundColor;
-  const HGBottomNavigationBar({
+  const SPBottomNavigationBar({
     Key key,
     @required this.children,
     this.backgroundColor,

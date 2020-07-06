@@ -2,10 +2,10 @@ import 'package:sparrow_ui/ui.dart';
 
 final fontSize = 30.rpx;
 
-class HGDescribeContainer extends StatelessWidget {
+class SPDescribeContainer extends StatelessWidget {
   final Widget child;
   final double paddingSize;
-  const HGDescribeContainer({
+  const SPDescribeContainer({
     Key key,
     this.child,
     this.paddingSize,
@@ -20,25 +20,25 @@ class HGDescribeContainer extends StatelessWidget {
   }
 }
 
-class HGDescribeItem extends StatelessWidget {
+class SPDescribeItem extends StatelessWidget {
   final String field;
   final String value;
   final double paddingSize;
 
-  const HGDescribeItem({Key key, this.field, this.value, this.paddingSize})
+  const SPDescribeItem({Key key, this.field, this.value, this.paddingSize})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return HGDescribeContainer(
+    return SPDescribeContainer(
       paddingSize: paddingSize,
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(child: HGDescribeFieldText('$field：'), flex: 0),
+            Expanded(child: SPDescribeFieldText('$field：'), flex: 0),
             Expanded(
-              child: HGDescribeValueText('$value'),
+              child: SPDescribeValueText('$value'),
               flex: 1,
             ),
           ],
@@ -48,8 +48,8 @@ class HGDescribeItem extends StatelessWidget {
   }
 }
 
-class HGTitleText extends Text {
-  HGTitleText(
+class SPTitleText extends Text {
+  SPTitleText(
     String content,
   ) : super(
           content,
@@ -61,8 +61,8 @@ class HGTitleText extends Text {
         );
 }
 
-class HGDescribeFieldText extends Text {
-  HGDescribeFieldText(
+class SPDescribeFieldText extends Text {
+  SPDescribeFieldText(
     String content,
   ) : super(
           content,
@@ -78,8 +78,8 @@ class HGDescribeFieldText extends Text {
         );
 }
 
-class HGDescribeValueText extends Text {
-  HGDescribeValueText(
+class SPDescribeValueText extends Text {
+  SPDescribeValueText(
     String content,
   ) : super(
           content,
@@ -95,8 +95,8 @@ class HGDescribeValueText extends Text {
         );
 }
 
-class HGMoneyText extends Text {
-  HGMoneyText(
+class SPMoneyText extends Text {
+  SPMoneyText(
     String content,
   ) : super(
           content,

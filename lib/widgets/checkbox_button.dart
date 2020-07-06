@@ -15,13 +15,13 @@ final _checkedDecoration = BoxDecoration(
   ),
 );
 
-class HGCheckboxButton extends StatelessWidget {
+class SPCheckboxButton extends StatelessWidget {
   final Widget child;
   final bool checked;
   final Function onTap;
   final double width;
 
-  const HGCheckboxButton(
+  const SPCheckboxButton(
       {Key key, this.child, this.checked, this.onTap, this.width})
       : super(key: key);
 

@@ -1,9 +1,9 @@
 import 'package:sparrow_ui/ui.dart';
 import 'package:sparrow_utils/sparrow_utils.dart';
 
-import './hg_grid.dart';
+import './grid.dart';
 
-class HGGridContainer extends StatelessWidget {
+class SPGridContainer extends StatelessWidget {
   final int crossAxisCount;
   final double itemSpacing;
   final double itemHeight;
@@ -11,7 +11,7 @@ class HGGridContainer extends StatelessWidget {
   final double width;
   final List<Widget> children;
   final Color backgroundColor;
-  const HGGridContainer(
+  const SPGridContainer(
       {Key key,
       @required this.crossAxisCount,
       @required this.children,
@@ -38,10 +38,10 @@ class HGGridContainer extends StatelessWidget {
     for (var i = 0; i < count; i += (crossAxisCount)) {
       var endIndex = i + crossAxisCount;
       List<Widget> items = List<Widget>.from(
-        HGUtils.map(
+        SPUtils.map(
           children.sublist(i, endIndex <= count ? endIndex : count),
           (int index, Widget item) {
-            return HGGrid(
+            return SPGrid(
               width: gridWidth,
               height: gridHeight,
               child: Container(
@@ -55,7 +55,7 @@ class HGGridContainer extends StatelessWidget {
 
       // 如果最后一行不足个数，用空白格补全
       while (items.length < crossAxisCount) {
-        items.add(HGGrid(
+        items.add(SPGrid(
           width: gridWidth,
           height: gridHeight,
         ));

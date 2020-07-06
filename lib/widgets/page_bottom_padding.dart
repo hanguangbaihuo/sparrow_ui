@@ -1,7 +1,7 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGPageBottomPadding extends StatelessWidget {
-  const HGPageBottomPadding({Key key}) : super(key: key);
+class SPPageBottomPadding extends StatelessWidget {
+  const SPPageBottomPadding({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:sparrow_ui/ui.dart';
 
-import './hg_button.dart';
+import './button.dart';
 
 final _uncheckedDecoration = BoxDecoration(
   // color: rgba(245, 245, 245, 1),
@@ -20,13 +20,13 @@ final _checkedDecoration = BoxDecoration(
   ),
 );
 
-class HGCheckboxButton2 extends StatelessWidget {
+class SPCheckboxButton2 extends StatelessWidget {
   final String content;
   final bool checked;
   final Function onTap;
   final double width;
 
-  const HGCheckboxButton2({
+  const SPCheckboxButton2({
     Key key,
     @required this.content,
     @required this.checked,
@@ -39,7 +39,7 @@ class HGCheckboxButton2 extends StatelessWidget {
     return Container(
       width: width,
       decoration: checked ? _checkedDecoration : _uncheckedDecoration,
-      child: HGButton60(
+      child: SPButton60(
         onTap: onTap,
         width: width,
         content: content,

@@ -1,11 +1,11 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGDoubleScaffold extends StatelessWidget {
+class SPDoubleScaffold extends StatelessWidget {
   final Scaffold body1;
   final Scaffold body2;
   final bool isOpenSecond;
 
-  const HGDoubleScaffold({
+  const SPDoubleScaffold({
     Key key,
     @required this.body1,
     @required this.body2,

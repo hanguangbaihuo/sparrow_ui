@@ -1,13 +1,13 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGCard extends StatelessWidget {
+class SPCard extends StatelessWidget {
   final Widget child;
   final Function onTap;
   final bool withPadding;
   final BoxBorder border;
   final Color backgroundColor;
 
-  const HGCard({
+  const SPCard({
     Key key,
     this.onTap,
     @required this.child,

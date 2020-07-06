@@ -2,7 +2,7 @@ import 'package:sparrow_ui/ui.dart';
 
 // 默认样式 是缺货断货、售后那种样式、红色半透明背景、红色字体
 
-class HGTagText extends StatelessWidget {
+class SPTagText extends StatelessWidget {
   final double holderHeight;
   final double height;
   final String text;
@@ -12,7 +12,7 @@ class HGTagText extends StatelessWidget {
   final bool marginLeft;
   final bool marginRight;
 
-  const HGTagText({
+  const SPTagText({
     Key key,
     @required this.text,
     this.holderHeight,

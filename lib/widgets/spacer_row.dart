@@ -1,9 +1,9 @@
 import 'package:sparrow_ui/ui.dart';
 
-class HGSpacerRow extends StatelessWidget {
+class SPSpacerRow extends StatelessWidget {
   final Widget left;
   final Widget right;
-  const HGSpacerRow({Key key, this.left, this.right}) : super(key: key);
+  const SPSpacerRow({Key key, this.left, this.right}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,24 +1,24 @@
-export './hg_card.dart';
-export './hg_card_content.dart';
-export './hg_app_bar.dart';
-export './hg_grids_container.dart';
-export './hg_grid.dart';
-export './hg_checkbox_button.dart';
-export './hg_checkbox_button2.dart';
+export './card.dart';
+export './card_content.dart';
+export './app_bar.dart';
+export './grids_container.dart';
+export './grid.dart';
+export './checkbox_button.dart';
+export './checkbox_button2.dart';
 
-export './hg_bottom_navigation_bar.dart';
-export './hg_bottom_navigation_bar_button.dart';
+export './bottom_navigation_bar.dart';
+export './bottom_navigation_bar_button.dart';
 
-export './hg_spacer_row.dart';
+export './spacer_row.dart';
 
-export './hg_button.dart';
+export './button.dart';
 
 export './loading_page.dart';
 export './loading_content.dart';
 
-export './hg_divider.dart';
-export './hg_tag_text.dart';
+export './divider.dart';
+export './tag_text.dart';
 
-export './hg_description.dart';
+export './description.dart';
 
-export 'hg_page_bottom_padding.dart';
+export 'page_bottom_padding.dart';
