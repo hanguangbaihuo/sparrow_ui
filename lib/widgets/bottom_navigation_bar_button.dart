@@ -2,14 +2,14 @@ import 'package:sparrow_ui/ui.dart';
 
 class SPBottomNavigationBarButton extends StatelessWidget {
   final Function onPressed;
-  final Function onLongPress;
+  final Function? onLongPress;
   final String content;
-  final Color color;
-  final Color backgroundColor;
+  final Color? color;
+  final Color? backgroundColor;
   const SPBottomNavigationBarButton({
-    Key key,
-    @required this.content,
-    @required this.onPressed,
+    Key? key,
+    required this.content,
+    required this.onPressed,
     this.backgroundColor,
     this.color,
     this.onLongPress,
@@ -31,8 +31,8 @@ class SPBottomNavigationBarButton extends StatelessWidget {
             ),
           ),
         ),
-        onTap: onPressed,
-        onLongPress: onLongPress,
+        onTap: onPressed as void Function()?,
+        onLongPress: onLongPress as void Function()?,
       ),
     );
   }

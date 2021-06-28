@@ -3,10 +3,10 @@ import 'package:sparrow_ui/ui.dart';
 final fontSize = 30.rpx;
 
 class SPDescribeContainer extends StatelessWidget {
-  final Widget child;
-  final double paddingSize;
+  final Widget? child;
+  final double? paddingSize;
   const SPDescribeContainer({
-    Key key,
+    Key? key,
     this.child,
     this.paddingSize,
   }) : super(key: key);
@@ -21,11 +21,11 @@ class SPDescribeContainer extends StatelessWidget {
 }
 
 class SPDescribeItem extends StatelessWidget {
-  final String field;
-  final String value;
-  final double paddingSize;
+  final String? field;
+  final String? value;
+  final double? paddingSize;
 
-  const SPDescribeItem({Key key, this.field, this.value, this.paddingSize})
+  const SPDescribeItem({Key? key, this.field, this.value, this.paddingSize})
       : super(key: key);
 
   @override

@@ -1,7 +1,7 @@
 import 'package:sparrow_ui/ui.dart';
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({Key key}) : super(key: key);
+  const LoadingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

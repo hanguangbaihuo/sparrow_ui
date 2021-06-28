@@ -7,7 +7,7 @@ abstract class SPState<T extends StatefulWidget> extends State
 }
 
 class SPPage extends StatefulWidget {
-  SPPage({Key key}) : super(key: key);
+  SPPage({Key? key}) : super(key: key);
 
   @override
   _SPPageState createState() => _SPPageState();

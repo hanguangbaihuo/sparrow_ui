@@ -2,25 +2,25 @@ import 'package:sparrow_ui/ui.dart';
 
 class SPCard extends StatelessWidget {
   final Widget child;
-  final Function onTap;
+  final Function? onTap;
   final bool withPadding;
-  final BoxBorder border;
-  final Color backgroundColor;
+  final BoxBorder? border;
+  final Color? backgroundColor;
 
   const SPCard({
-    Key key,
+    Key? key,
     this.onTap,
-    @required this.child,
+    required this.child,
     this.backgroundColor,
     this.border,
-    bool withPadding,
+    bool? withPadding,
   })  : this.withPadding = withPadding ?? false,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         width: 750.rpx,
         margin: EdgeInsets.only(top: 20.rpx),

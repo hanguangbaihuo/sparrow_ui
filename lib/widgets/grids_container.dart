@@ -6,20 +6,20 @@ import './grid.dart';
 class SPGridContainer extends StatelessWidget {
   final int crossAxisCount;
   final double itemSpacing;
-  final double itemHeight;
+  final double? itemHeight;
   final double rowSpacing;
   final double width;
   final List<Widget> children;
   final Color backgroundColor;
   const SPGridContainer(
-      {Key key,
-      @required this.crossAxisCount,
-      @required this.children,
-      @required this.width,
+      {Key? key,
+      required this.crossAxisCount,
+      required this.children,
+      required this.width,
       this.itemHeight, // 如果不设置高度就等于宽度
-      double itemSpacing,
-      double rowSpacing,
-      Color backgroundColor})
+      double? itemSpacing,
+      double? rowSpacing,
+      Color? backgroundColor})
       : this.itemSpacing = itemSpacing ?? 0.0,
         this.rowSpacing = rowSpacing ?? 0.0,
         this.backgroundColor = backgroundColor ?? Colors.white,
@@ -38,7 +38,7 @@ class SPGridContainer extends StatelessWidget {
     for (var i = 0; i < count; i += (crossAxisCount)) {
       var endIndex = i + crossAxisCount;
       List<Widget> items = List<Widget>.from(
-        SPUtils.map(
+        SPCollectionUtils.map(
           children.sublist(i, endIndex <= count ? endIndex : count),
           (int index, Widget item) {
             return SPGrid(

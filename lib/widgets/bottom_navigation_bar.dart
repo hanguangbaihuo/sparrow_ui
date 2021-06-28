@@ -2,10 +2,10 @@ import 'package:sparrow_ui/ui.dart';
 
 class SPBottomNavigationBar extends StatelessWidget {
   final List<Widget> children;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   const SPBottomNavigationBar({
-    Key key,
-    @required this.children,
+    Key? key,
+    required this.children,
     this.backgroundColor,
   }) : super(key: key);
 

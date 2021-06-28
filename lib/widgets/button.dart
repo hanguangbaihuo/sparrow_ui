@@ -1,15 +1,15 @@
 import 'package:sparrow_ui/ui.dart';
 
 class SPButton extends StatelessWidget {
-  final Function onTap;
-  final double width;
-  final double height;
-  final String content;
-  final Color color;
-  final Color contentColor;
-  final BoxBorder border;
+  final Function? onTap;
+  final double? width;
+  final double? height;
+  final String? content;
+  final Color? color;
+  final Color? contentColor;
+  final BoxBorder? border;
   SPButton({
-    Key key,
+    Key? key,
     this.onTap,
     this.width,
     this.height,
@@ -32,7 +32,7 @@ class SPButton extends StatelessWidget {
           color: color,
         ),
         child: Text(
-          content,
+          content!,
           style: TextStyle(
             color: contentColor,
             fontSize: 30.rpx,
@@ -40,23 +40,23 @@ class SPButton extends StatelessWidget {
           ),
         ),
       ),
-      onTap: onTap,
+      onTap: onTap as void Function()?,
     );
   }
 }
 
 class SPButton80 extends SPButton {
-  final Function onTap;
-  final double width;
-  final String content;
+  final Function? onTap;
+  final double? width;
+  final String? content;
   SPButton80({
-    Key key,
+    Key? key,
     this.onTap,
     this.width,
     this.content,
-    Color color,
-    Color contentColor,
-    BoxBorder border,
+    Color? color,
+    Color? contentColor,
+    BoxBorder? border,
   }) : super(
           key: key,
           onTap: onTap,
@@ -70,17 +70,17 @@ class SPButton80 extends SPButton {
 }
 
 class SPButton60 extends SPButton {
-  final Function onTap;
-  final double width;
-  final String content;
+  final Function? onTap;
+  final double? width;
+  final String? content;
   SPButton60({
-    Key key,
+    Key? key,
     this.onTap,
     this.width,
     this.content,
-    Color color,
-    Color contentColor,
-    BoxBorder border,
+    Color? color,
+    Color? contentColor,
+    BoxBorder? border,
   }) : super(
           key: key,
           onTap: onTap,

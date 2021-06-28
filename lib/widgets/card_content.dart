@@ -2,11 +2,11 @@ import 'package:sparrow_ui/ui.dart';
 import './card.dart';
 
 class SPCardContent extends StatelessWidget {
-  final Widget child;
-  final Color backgroundColor;
+  final Widget? child;
+  final Color? backgroundColor;
 
   const SPCardContent({
-    Key key,
+    Key? key,
     this.child,
     this.backgroundColor,
   }) : super(key: key);

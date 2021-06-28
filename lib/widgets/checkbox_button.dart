@@ -16,26 +16,26 @@ final _checkedDecoration = BoxDecoration(
 );
 
 class SPCheckboxButton extends StatelessWidget {
-  final Widget child;
-  final bool checked;
-  final Function onTap;
-  final double width;
+  final Widget? child;
+  final bool? checked;
+  final Function? onTap;
+  final double? width;
 
   const SPCheckboxButton(
-      {Key key, this.child, this.checked, this.onTap, this.width})
+      {Key? key, this.child, this.checked, this.onTap, this.width})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         width: width,
         // height: 60.rpx,
         // color: rgba(255, 255, 255, 1),
 
         alignment: Alignment.center,
-        decoration: checked ? _checkedDecoration : _uncheckedDecoration,
+        decoration: checked! ? _checkedDecoration : _uncheckedDecoration,
         child: child,
       ),
     );

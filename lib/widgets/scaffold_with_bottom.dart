@@ -6,10 +6,10 @@ class SPDoubleScaffold extends StatelessWidget {
   final bool isOpenSecond;
 
   const SPDoubleScaffold({
-    Key key,
-    @required this.body1,
-    @required this.body2,
-    @required this.isOpenSecond,
+    Key? key,
+    required this.body1,
+    required this.body2,
+    required this.isOpenSecond,
     withPadding,
   }) : super(key: key);
 

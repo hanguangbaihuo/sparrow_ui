@@ -24,13 +24,13 @@ class SPCheckboxButton2 extends StatelessWidget {
   final String content;
   final bool checked;
   final Function onTap;
-  final double width;
+  final double? width;
 
   const SPCheckboxButton2({
-    Key key,
-    @required this.content,
-    @required this.checked,
-    @required this.onTap,
+    Key? key,
+    required this.content,
+    required this.checked,
+    required this.onTap,
     this.width,
   }) : super(key: key);
 

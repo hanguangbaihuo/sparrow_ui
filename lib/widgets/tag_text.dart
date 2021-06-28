@@ -3,18 +3,18 @@ import 'package:sparrow_ui/ui.dart';
 // 默认样式 是缺货断货、售后那种样式、红色半透明背景、红色字体
 
 class SPTagText extends StatelessWidget {
-  final double holderHeight;
-  final double height;
+  final double? holderHeight;
+  final double? height;
   final String text;
-  final Color backgroudColor;
-  final Color textColor;
-  final double fontSize;
-  final bool marginLeft;
-  final bool marginRight;
+  final Color? backgroudColor;
+  final Color? textColor;
+  final double? fontSize;
+  final bool? marginLeft;
+  final bool? marginRight;
 
   const SPTagText({
-    Key key,
-    @required this.text,
+    Key? key,
+    required this.text,
     this.holderHeight,
     this.backgroudColor,
     this.textColor,
