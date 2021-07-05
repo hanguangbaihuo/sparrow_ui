@@ -47,6 +47,26 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SPGap.largeXX(),
           SPButton(content: 'Button'),
+          SPButton(
+            content: 'Button',
+            type: SPButtonType.secondary,
+            colorSense: SPColorSense.info,
+          ),
+          SPButton(
+            content: 'Button',
+            type: SPButtonType.primary,
+            colorSense: SPColorSense.error,
+          ),
+          SPButton(
+            content: 'Button',
+            type: SPButtonType.secondary,
+            colorSense: SPColorSense.success,
+          ),
+          SPButton(
+            content: 'Button',
+            type: SPButtonType.secondary,
+            colorSense: SPColorSense.warning,
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(

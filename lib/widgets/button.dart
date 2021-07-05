@@ -23,23 +23,13 @@ enum SPButtonType {
 
 class SPButton extends StatelessWidget {
   final GestureTapCallback? onTap;
-  final double? width;
-  final double? height;
-  final String? content;
-  final Color? color;
-  final Color? contentColor;
-  final BoxBorder? border;
+  final String content;
   final SPColorSense colorSense;
   final SPButtonType type;
   SPButton({
     Key? key,
     this.onTap,
-    this.width,
-    this.height,
-    this.content,
-    this.color,
-    this.contentColor,
-    this.border,
+    required this.content,
     this.colorSense = SPColorSense.primary,
     this.type = SPButtonType.primary,
   }) : super(key: key);
@@ -47,21 +37,55 @@ class SPButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = SPTheme.of(context);
-    final colorSwatch = theme.cSPColorSense[type];
+    // 注意此处，map取值的类型检查
+    final colorSwatch = theme.cSPColorSense[colorSense];
+
+    if (type == SPButtonType.secondary) {
+      return MaterialButton(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(SPSize.radiusSmall),
+          side: type == SPButtonType.secondary
+              ? BorderSide(
+                  width: 1.rpx,
+                  color: colorSwatch![3]!,
+                )
+              : BorderSide.none,
+        ),
+        color: colorSwatch![1]!,
+        child: Container(
+          alignment: Alignment.center,
+          child: Text(
+            content,
+            style: TextStyle(
+              color: colorSwatch[6]!,
+              fontSize: 30.rpx,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+        onPressed: () {},
+      );
+    }
     return MaterialButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(SPSize.radiusSmall),
+      ),
+      elevation: 0,
+      color: colorSwatch![6],
       child: Container(
         alignment: Alignment.center,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10.rpx)),
-          border: border,
-          color: color,
-        ),
+        // width: width,
+        // height: height,
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.all(Radius.circular(10.rpx)),
+        //   border: border,
+        //   color: color,
+        // ),
         child: Text(
-          content!,
+          content,
           style: TextStyle(
-            color: contentColor,
+            color: SPColors.white,
             fontSize: 30.rpx,
             fontWeight: FontWeight.w400,
           ),
