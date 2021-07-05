@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class SPAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Size preferredSize;
@@ -7,7 +7,7 @@ class SPAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   SPAppBar({Key? key, this.child, Color? backgroudColor})
       : preferredSize = Size.fromHeight(88.rpx),
-        this.backgroudColor = backgroudColor ?? rgba(255, 255, 255, 1),
+        this.backgroudColor = backgroudColor ?? Colors.white,
         super(key: key);
 
   @override

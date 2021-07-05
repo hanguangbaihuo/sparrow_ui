@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class SPGrid extends StatelessWidget {
   final Widget? child;
@@ -15,7 +15,7 @@ class SPGrid extends StatelessWidget {
       alignment: Alignment.center,
       // constraints:  BoxConstraints.expand(),
       // height: MediaQuery.of(context).size.height.rpx,
-      // color: rgba(255, 255, 255, 1),
+      // color: Colors.white,
       width: width,
       height: height,
       child: child,

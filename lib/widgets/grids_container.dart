@@ -1,5 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
-import 'package:sparrow_utils/sparrow_utils.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 import './grid.dart';
 

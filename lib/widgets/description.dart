@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 final fontSize = 30.rpx;
 
@@ -56,7 +56,7 @@ class SPTitleText extends Text {
           style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.w500,
-            color: rgba(33, 37, 41, 1),
+            color: Color.fromRGBO(33, 37, 41, 1),
           ),
         );
 }
@@ -73,7 +73,7 @@ class SPDescribeFieldText extends Text {
             fontSize: fontSize,
             height: 42 / 30,
             fontWeight: FontWeight.w400,
-            color: rgba(127, 127, 127, 1),
+            color: Color.fromRGBO(127, 127, 127, 1),
           ),
         );
 }
@@ -87,7 +87,7 @@ class SPDescribeValueText extends Text {
             height: 42 / 30,
             fontSize: fontSize,
             fontWeight: FontWeight.w500,
-            color: rgba(33, 37, 41, 1),
+            color: Color.fromRGBO(33, 37, 41, 1),
           ),
           maxLines: 2,
           softWrap: true,
@@ -103,7 +103,7 @@ class SPMoneyText extends Text {
           style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.w500,
-            color: rgba(248, 47, 63, 1),
+            color: Color.fromRGBO(248, 47, 63, 1),
           ),
         );
 }

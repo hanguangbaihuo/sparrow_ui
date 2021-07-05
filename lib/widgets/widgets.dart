@@ -22,3 +22,4 @@ export './tag_text.dart';
 export './description.dart';
 
 export 'page_bottom_padding.dart';
+export 'gap.dart';

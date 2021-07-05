@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class SPBottomNavigationBar extends StatelessWidget {
   final List<Widget> children;
@@ -15,7 +15,7 @@ class SPBottomNavigationBar extends StatelessWidget {
       height: 100.rpx,
       width: 750.rpx,
       decoration: BoxDecoration(
-        color: rgba(255, 255, 255, 1),
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.05),

@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class LoadingContent extends StatelessWidget {
   const LoadingContent({Key? key}) : super(key: key);

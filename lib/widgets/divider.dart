@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class SPDivider extends StatelessWidget {
   final Color? color;
@@ -10,7 +10,7 @@ class SPDivider extends StatelessWidget {
     return Container(
       child: Divider(
         height: height ?? 48.rpx,
-        color: color ?? rgba(245, 245, 245, 1),
+        color: color ?? Color.fromRGBO(245, 245, 245, 1),
       ),
     );
   }

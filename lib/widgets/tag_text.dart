@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 // 默认样式 是缺货断货、售后那种样式、红色半透明背景、红色字体
 
@@ -41,13 +41,13 @@ class SPTagText extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(6.rpx)),
-          color: backgroudColor ?? rgba(248, 47, 63, 0.1),
+          color: backgroudColor ?? Color.fromRGBO(248, 47, 63, 0.1),
         ),
         child: Text(
           text,
           textAlign: TextAlign.start,
           style: TextStyle(
-            color: textColor ?? rgba(248, 47, 63, 1),
+            color: textColor ?? Color.fromRGBO(248, 47, 63, 1),
             fontSize: _fontSize,
             height: _height / _fontSize,
           ),

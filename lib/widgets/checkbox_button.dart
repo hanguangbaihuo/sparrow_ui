@@ -1,16 +1,14 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 final _uncheckedDecoration = BoxDecoration(
-  // color: rgba(245, 245, 245, 1),
-  color: rgba(255, 255, 255, 1),
+  color: Colors.white,
   // borderRadius: BorderRadius.all(Radius.circular(10.rpx)),
 );
 
 final _checkedDecoration = BoxDecoration(
-  color: rgba(255, 255, 255, 1),
-  // color: rgba(248, 47, 63, 0.08),
+  color: Colors.white,
   border: Border.all(
-    color: rgba(248, 47, 63, 1),
+    color: Color.fromRGBO(248, 47, 63, 1),
     width: 2.rpx,
   ),
 );
@@ -32,7 +30,7 @@ class SPCheckboxButton extends StatelessWidget {
       child: Container(
         width: width,
         // height: 60.rpx,
-        // color: rgba(255, 255, 255, 1),
+        // color: Colors.white,
 
         alignment: Alignment.center,
         decoration: checked! ? _checkedDecoration : _uncheckedDecoration,

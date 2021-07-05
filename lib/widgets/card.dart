@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 
 class SPCard extends StatelessWidget {
   final Widget child;
@@ -27,7 +27,7 @@ class SPCard extends StatelessWidget {
         padding: EdgeInsets.only(left: 20.rpx, right: 20.rpx),
         child: Container(
           decoration: BoxDecoration(
-            color: this.backgroundColor ?? rgba(255, 255, 255, 1),
+            color: this.backgroundColor ?? Colors.white,
             border: border,
           ),
           padding: withPadding ? EdgeInsets.all(24.rpx) : null,

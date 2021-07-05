@@ -1,4 +1,4 @@
-import 'package:sparrow_ui/ui.dart';
+import 'package:sparrow_ui/sparrow_ui.dart';
 import './card.dart';
 
 class SPCardContent extends StatelessWidget {
