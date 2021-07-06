@@ -1,6 +1,6 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-import './button.dart';
+import 'button/button.dart';
 
 final _uncheckedDecoration = BoxDecoration(
   // color: Color.fromRGBO(245, 245, 245, 1),

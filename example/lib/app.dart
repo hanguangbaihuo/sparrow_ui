@@ -1,9 +1,11 @@
 import 'package:app/common.dart';
+import 'pages/yello_page.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SPLayoutWrapper(
+      designSize: SPLayoutUtils.designSize,
       builder: () {
         return SPTheme(
           data: SPThemeData(),
@@ -36,6 +38,10 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+class CSS {
+  static final bigButton = SPButtonStyle(buttonSize: SPButtonSize.big);
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -44,28 +50,75 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 20.rpx),
         children: [
           SPGap.largeXX(),
-          SPButton(content: 'Button'),
           SPButton(
-            content: 'Button',
-            type: SPButtonType.secondary,
-            colorSense: SPColorSense.info,
+            content: '默认 主色按钮Button',
+            onPressed: () {},
           ),
+          SPGap.large(),
           SPButton(
-            content: 'Button',
-            type: SPButtonType.primary,
-            colorSense: SPColorSense.error,
+            content: '黄色主题',
+            style: SPButtonStyle(colorSense: SPColorSense.warning),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return YelloPage();
+              }));
+            },
           ),
+          SPGap.large(),
           SPButton(
             content: 'Button',
-            type: SPButtonType.secondary,
-            colorSense: SPColorSense.success,
+            onPressed: () {},
+            style: SPButtonStyle(buttonType: SPButtonType.secondary),
           ),
+          SPGap.large(),
           SPButton(
             content: 'Button',
-            type: SPButtonType.secondary,
-            colorSense: SPColorSense.warning,
+            onPressed: () {},
+            style: SPButtonStyle(colorSense: SPColorSense.error),
+          ),
+          SPGap.large(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SPButton(
+                content: 'Button',
+                onPressed: () {},
+                style: SPButtonStyle(buttonSize: SPButtonSize.small),
+              ),
+              SPButton(
+                content: '按钮',
+                onPressed: () {},
+                style: SPButtonStyle(
+                  buttonSize: SPButtonSize.small,
+                  buttonType: SPButtonType.secondary,
+                ),
+              ),
+              SPButton(
+                content: '危险',
+                onPressed: () {},
+                style: SPButtonStyle(
+                  buttonSize: SPButtonSize.small,
+                  buttonType: SPButtonType.secondary,
+                  colorSense: SPColorSense.error,
+                ),
+              ),
+            ],
+          ),
+          Divider(height: 100),
+          ElevatedButton(
+            child: Text("ElevatedButton"),
+            onPressed: () {},
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text("OutlinedButton"),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("TextButton"),
           ),
         ],
       ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
+import '../basic/colors.dart';
 
 class SPThemeData {
   /// 主色卡
-  MaterialColor primarySwatch = SPColors.blue;
+  final MaterialColor primarySwatch;
 
   /// 次色卡
-  MaterialColor secondarySwatch = SPColors.gold;
+  final MaterialColor secondarySwatch;
 
   /// 颜色场景对应的色卡
   Map<SPColorSense, MaterialColor> cSPColorSense = {};
@@ -27,7 +27,12 @@ class SPThemeData {
 
 /// 根据我们的theme构建原生的theme
 ThemeData buildOriginalThemeData() {
-  return ThemeData();
+  return ThemeData(
+    textTheme: TextTheme(
+      bodyText1: TextStyle(height: 1.6),
+      bodyText2: TextStyle(height: 1.6),
+    ),
+  );
 }
 
 class _InheritedTheme extends InheritedTheme {

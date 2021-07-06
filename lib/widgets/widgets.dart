@@ -11,7 +11,7 @@ export './bottom_navigation_bar_button.dart';
 
 export './spacer_row.dart';
 
-export './button.dart';
+export 'button/button.dart';
 
 export './loading_page.dart';
 export './loading_content.dart';
