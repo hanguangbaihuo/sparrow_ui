@@ -1,13 +1,13 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPCard extends StatelessWidget {
+class PICard extends StatelessWidget {
   final Widget child;
   final Function? onTap;
   final bool withPadding;
   final BoxBorder? border;
   final Color? backgroundColor;
 
-  const SPCard({
+  const PICard({
     Key? key,
     this.onTap,
     required this.child,

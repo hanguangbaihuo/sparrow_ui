@@ -2,49 +2,49 @@ import 'package:sparrow_ui/sparrow_ui.dart';
 
 /// 按钮样式
 @immutable
-class SPButtonStyle {
+class PIButtonStyle {
   /// 按钮类型
-  final SPButtonType buttonType;
+  final PIButtonType buttonType;
 
   /// 按钮大小
-  final SPButtonSize buttonSize;
+  final PIButtonSize buttonSize;
 
   /// 按钮圆角大小
-  final SPRadius buttonRadius;
+  final PIRadius buttonRadius;
 
   /// 颜色场景
-  final SPColorSense colorSense;
+  final PIColorSense colorSense;
 
   /// 按钮状态
-  final SPButtonStatus buttonStatus;
+  final PIButtonStatus buttonStatus;
 
   /// 构造函数
-  const SPButtonStyle({
-    this.buttonType = SPButtonType.primary,
-    this.buttonRadius = SPRadius.small,
-    this.buttonSize = SPButtonSize.big,
-    this.colorSense = SPColorSense.primary,
-    this.buttonStatus = SPButtonStatus.normal,
+  const PIButtonStyle({
+    this.buttonType = PIButtonType.primary,
+    this.buttonRadius = PIRadius.small,
+    this.buttonSize = PIButtonSize.big,
+    this.colorSense = PIColorSense.primary,
+    this.buttonStatus = PIButtonStatus.normal,
   });
 
   ///
-  SPButtonStyle copyWith({
+  PIButtonStyle copyWith({
     /// 按钮类型
-    SPButtonType? buttonType,
+    PIButtonType? buttonType,
 
     /// 按钮大小
-    SPButtonSize? buttonSize,
+    PIButtonSize? buttonSize,
 
     /// 按钮圆角大小
-    SPRadius? buttonRadius,
+    PIRadius? buttonRadius,
 
     /// 颜色场景
-    SPColorSense? colorSense,
+    PIColorSense? colorSense,
 
     /// 按钮状态
-    SPButtonStatus? buttonStatus,
+    PIButtonStatus? buttonStatus,
   }) {
-    return SPButtonStyle(
+    return PIButtonStyle(
       buttonRadius: buttonRadius ?? this.buttonRadius,
       colorSense: colorSense ?? this.colorSense,
       buttonSize: buttonSize ?? this.buttonSize,
@@ -55,7 +55,7 @@ class SPButtonStyle {
 }
 
 /// 按钮类型
-enum SPButtonType {
+enum PIButtonType {
   /// 主按钮，颜色填充，白色文字
   primary,
 
@@ -64,13 +64,13 @@ enum SPButtonType {
 }
 
 /// 按钮大小
-enum SPButtonSize {
+enum PIButtonSize {
   big,
   small,
 }
 
 /// 按钮状态：正常、暂未激活、禁用
-enum SPButtonStatus {
+enum PIButtonStatus {
   /// 正常
   normal,
 

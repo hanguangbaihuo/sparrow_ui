@@ -13,13 +13,13 @@ final _checkedDecoration = BoxDecoration(
   ),
 );
 
-class SPCheckboxButton extends StatelessWidget {
+class PICheckboxButton extends StatelessWidget {
   final Widget? child;
   final bool? checked;
   final Function? onTap;
   final double? width;
 
-  const SPCheckboxButton(
+  const PICheckboxButton(
       {Key? key, this.child, this.checked, this.onTap, this.width})
       : super(key: key);
 

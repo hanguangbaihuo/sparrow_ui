@@ -2,10 +2,10 @@ import 'package:sparrow_ui/sparrow_ui.dart';
 
 final fontSize = 30.rpx;
 
-class SPDescribeContainer extends StatelessWidget {
+class PIDescribeContainer extends StatelessWidget {
   final Widget? child;
   final double? paddingSize;
-  const SPDescribeContainer({
+  const PIDescribeContainer({
     Key? key,
     this.child,
     this.paddingSize,
@@ -20,25 +20,25 @@ class SPDescribeContainer extends StatelessWidget {
   }
 }
 
-class SPDescribeItem extends StatelessWidget {
+class PIDescribeItem extends StatelessWidget {
   final String? field;
   final String? value;
   final double? paddingSize;
 
-  const SPDescribeItem({Key? key, this.field, this.value, this.paddingSize})
+  const PIDescribeItem({Key? key, this.field, this.value, this.paddingSize})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SPDescribeContainer(
+    return PIDescribeContainer(
       paddingSize: paddingSize,
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(child: SPDescribeFieldText('$field：'), flex: 0),
+            Expanded(child: PIDescribeFieldText('$field：'), flex: 0),
             Expanded(
-              child: SPDescribeValueText('$value'),
+              child: PIDescribeValueText('$value'),
               flex: 1,
             ),
           ],
@@ -48,8 +48,8 @@ class SPDescribeItem extends StatelessWidget {
   }
 }
 
-class SPTitleText extends Text {
-  SPTitleText(
+class PITitleText extends Text {
+  PITitleText(
     String content,
   ) : super(
           content,
@@ -61,8 +61,8 @@ class SPTitleText extends Text {
         );
 }
 
-class SPDescribeFieldText extends Text {
-  SPDescribeFieldText(
+class PIDescribeFieldText extends Text {
+  PIDescribeFieldText(
     String content,
   ) : super(
           content,
@@ -78,8 +78,8 @@ class SPDescribeFieldText extends Text {
         );
 }
 
-class SPDescribeValueText extends Text {
-  SPDescribeValueText(
+class PIDescribeValueText extends Text {
+  PIDescribeValueText(
     String content,
   ) : super(
           content,
@@ -95,8 +95,8 @@ class SPDescribeValueText extends Text {
         );
 }
 
-class SPMoneyText extends Text {
-  SPMoneyText(
+class PIMoneyText extends Text {
+  PIMoneyText(
     String content,
   ) : super(
           content,

@@ -20,13 +20,13 @@ final _checkedDecoration = BoxDecoration(
   ),
 );
 
-// class SPCheckboxButton2 extends StatelessWidget {
+// class PICheckboxButton2 extends StatelessWidget {
 //   final String content;
 //   final bool checked;
 //   final Function onTap;
 //   final double? width;
 
-//   const SPCheckboxButton2({
+//   const PICheckboxButton2({
 //     Key? key,
 //     required this.content,
 //     required this.checked,
@@ -39,7 +39,7 @@ final _checkedDecoration = BoxDecoration(
 //     return Container(
 //       width: width,
 //       decoration: checked ? _checkedDecoration : _uncheckedDecoration,
-//       child: SPButton60(
+//       child: PIButton60(
 //         onTap: onTap,
 //         width: width,
 //         content: content,

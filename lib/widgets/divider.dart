@@ -1,9 +1,9 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPDivider extends StatelessWidget {
+class PIDivider extends StatelessWidget {
   final Color? color;
   final double? height;
-  const SPDivider({Key? key, this.color, this.height}) : super(key: key);
+  const PIDivider({Key? key, this.color, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,14 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPGap extends StatelessWidget {
+class PIGap extends StatelessWidget {
   final double? height;
-  const SPGap({Key? key, this.height}) : super(key: key);
+  const PIGap({Key? key, this.height}) : super(key: key);
 
-  SPGap.small() : height = 8.rpx;
-  SPGap.medium() : height = 16.rpx;
-  SPGap.large() : height = 24.rpx;
-  SPGap.largeX() : height = 32.rpx;
-  SPGap.largeXX() : height = 48.rpx;
+  PIGap.small() : height = 8.rpx;
+  PIGap.medium() : height = 16.rpx;
+  PIGap.large() : height = 24.rpx;
+  PIGap.largeX() : height = 32.rpx;
+  PIGap.largeXX() : height = 48.rpx;
 
   @override
   Widget build(BuildContext context) {

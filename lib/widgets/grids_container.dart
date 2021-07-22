@@ -2,7 +2,7 @@ import 'package:sparrow_ui/sparrow_ui.dart';
 
 import './grid.dart';
 
-class SPGridContainer extends StatelessWidget {
+class PIGridContainer extends StatelessWidget {
   final int crossAxisCount;
   final double itemSpacing;
   final double? itemHeight;
@@ -10,7 +10,7 @@ class SPGridContainer extends StatelessWidget {
   final double width;
   final List<Widget> children;
   final Color backgroundColor;
-  const SPGridContainer(
+  const PIGridContainer(
       {Key? key,
       required this.crossAxisCount,
       required this.children,
@@ -40,7 +40,7 @@ class SPGridContainer extends StatelessWidget {
         SPCollectionUtils.map(
           children.sublist(i, endIndex <= count ? endIndex : count),
           (int index, Widget item) {
-            return SPGrid(
+            return PIGrid(
               width: gridWidth,
               height: gridHeight,
               child: Container(
@@ -54,7 +54,7 @@ class SPGridContainer extends StatelessWidget {
 
       // 如果最后一行不足个数，用空白格补全
       while (items.length < crossAxisCount) {
-        items.add(SPGrid(
+        items.add(PIGrid(
           width: gridWidth,
           height: gridHeight,
         ));

@@ -20,7 +20,7 @@ extension toFlutterColor on MaterialColor {
 }
 
 /// 颜色场景
-enum SPColorSense {
+enum PIColorSense {
   /// 主色 primary
   primary,
 
@@ -38,7 +38,7 @@ enum SPColorSense {
 }
 
 /// 基准色
-class SPColors {
+class PIColors {
   /// 黑色和白色
   static Color black = Color(0xff000000);
   static Color white = Color(0xffffffff);

@@ -1,11 +1,11 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPDoubleScaffold extends StatelessWidget {
+class PIDoubleScaffold extends StatelessWidget {
   final Scaffold body1;
   final Scaffold body2;
   final bool isOpenSecond;
 
-  const SPDoubleScaffold({
+  const PIDoubleScaffold({
     Key? key,
     required this.body1,
     required this.body2,

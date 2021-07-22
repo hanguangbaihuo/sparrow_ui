@@ -2,20 +2,25 @@ import 'package:sparrow_ui/sparrow_ui.dart';
 import 'button_style.dart';
 export 'button_style.dart';
 
-class SPButton extends StatelessWidget {
+class PIButton extends StatelessWidget {
   final GestureTapCallback? onPressed;
   final String content;
-  final SPButtonStyle style;
-  SPButton({
+  final PIButtonStyle style;
+  // final List<PIButtonStyle> styles;
+  // 颜色：文字颜色、边框颜色、填充颜色
+
+  PIButton({
     Key? key,
     required this.onPressed,
     required this.content,
-    this.style = const SPButtonStyle(),
+    this.style = const PIButtonStyle(),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final theme = SPTheme.of(context);
+    final theme = PITheme.of(context);
+    final themeButtonStyle = theme.buttonStyle;
+
     final colorSense = style.colorSense;
     final buttonType = style.buttonType;
     final buttonRadius = style.buttonRadius;
@@ -46,14 +51,16 @@ class SPButton extends StatelessWidget {
   }
 
   /// 按钮样式
-  ButtonStyle _renderStyle(SPThemeData theme) {
-    final MaterialColor colorSwatch = theme.cSPColorSense[style.colorSense]!;
+  ButtonStyle _renderStyle(PIThemeData theme) {
+    final MaterialColor colorSwatch = theme.cPIColorSense[style.colorSense]!;
 
     return ButtonStyle(
       // 填充色、背景色
       backgroundColor: _renderBackgroundColor(colorSwatch),
       // 文字颜色、前景色
       foregroundColor: _renderTextColor(colorSwatch),
+      overlayColor:
+          MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.1)),
       elevation: MaterialStateProperty.all<double>(0),
       fixedSize: MaterialStateProperty.all<Size>(
           Size.fromHeight(_renderButtonHeight())),
@@ -74,10 +81,10 @@ class SPButton extends StatelessWidget {
   /// 圆角
   BorderRadiusGeometry _renderRadius() {
     // 小圆角、大圆角
-    if (style.buttonRadius == SPRadius.small) {
-      return BorderRadius.circular(SPSize.radiusSmall);
-    } else if (style.buttonRadius == SPRadius.big) {
-      return BorderRadius.circular(SPSize.radiusBig);
+    if (style.buttonRadius == PIRadius.small) {
+      return BorderRadius.circular(PISize.radiusSmall);
+    } else if (style.buttonRadius == PIRadius.big) {
+      return BorderRadius.circular(PISize.radiusBig);
     }
 
     // 全圆角：需要根据按钮大小显示
@@ -87,7 +94,7 @@ class SPButton extends StatelessWidget {
   /// 边框
   BorderSide _renderBorder(MaterialColor colorSwatch) {
     // 主按钮没有边框
-    if (style.buttonType == SPButtonType.primary) {
+    if (style.buttonType == PIButtonType.primary) {
       return BorderSide.none;
     }
 
@@ -102,7 +109,7 @@ class SPButton extends StatelessWidget {
   MaterialStateProperty<Color> _renderBackgroundColor(
       MaterialColor colorSwatch) {
     // 主按钮的填充颜色是色卡6
-    if (style.buttonType == SPButtonType.primary) {
+    if (style.buttonType == PIButtonType.primary) {
       return MaterialStateProperty.all<Color>(colorSwatch[6]!);
     }
 
@@ -113,8 +120,8 @@ class SPButton extends StatelessWidget {
   /// 文字颜色
   MaterialStateProperty<Color> _renderTextColor(MaterialColor colorSwatch) {
     // 主按钮的文字颜色是白色
-    if (style.buttonType == SPButtonType.primary) {
-      return MaterialStateProperty.all<Color>(SPColors.white);
+    if (style.buttonType == PIButtonType.primary) {
+      return MaterialStateProperty.all<Color>(PIColors.white);
     }
 
     // 次按钮的文字颜色是色卡6
@@ -130,10 +137,10 @@ class SPButton extends StatelessWidget {
   }
 
   double _renderFontSize() {
-    return style.buttonSize == SPButtonSize.big ? 34.rpx : 28.rpx;
+    return style.buttonSize == PIButtonSize.big ? 34.rpx : 28.rpx;
   }
 
   double _renderButtonHeight() {
-    return style.buttonSize == SPButtonSize.big ? 96.rpx : 64.rpx;
+    return style.buttonSize == PIButtonSize.big ? 96.rpx : 64.rpx;
   }
 }

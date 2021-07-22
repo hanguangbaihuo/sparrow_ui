@@ -1,9 +1,9 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPSpacerRow extends StatelessWidget {
+class PISpacerRow extends StatelessWidget {
   final Widget? left;
   final Widget? right;
-  const SPSpacerRow({Key? key, this.left, this.right}) : super(key: key);
+  const PISpacerRow({Key? key, this.left, this.right}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

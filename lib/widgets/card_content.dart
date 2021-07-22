@@ -1,11 +1,11 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 import './card.dart';
 
-class SPCardContent extends StatelessWidget {
+class PICardContent extends StatelessWidget {
   final Widget? child;
   final Color? backgroundColor;
 
-  const SPCardContent({
+  const PICardContent({
     Key? key,
     this.child,
     this.backgroundColor,
@@ -13,7 +13,7 @@ class SPCardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SPCard(
+    return PICard(
       backgroundColor: backgroundColor,
       child: Padding(
         padding: EdgeInsets.all(20.rpx),

@@ -1,10 +1,10 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPGrid extends StatelessWidget {
+class PIGrid extends StatelessWidget {
   final Widget? child;
   final double width;
   final double height;
-  const SPGrid(
+  const PIGrid(
       {Key? key, this.child, required this.width, required this.height})
       : super(key: key);
 

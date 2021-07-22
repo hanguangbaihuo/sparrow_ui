@@ -1,11 +1,11 @@
 import 'package:sparrow_ui/sparrow_ui.dart';
 
-class SPAppBar extends StatelessWidget implements PreferredSizeWidget {
+class PIAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Size preferredSize;
   final Widget? child;
   final Color backgroudColor;
 
-  SPAppBar({Key? key, this.child, Color? backgroudColor})
+  PIAppBar({Key? key, this.child, Color? backgroudColor})
       : preferredSize = Size.fromHeight(88.rpx),
         this.backgroudColor = backgroudColor ?? Colors.white,
         super(key: key);
