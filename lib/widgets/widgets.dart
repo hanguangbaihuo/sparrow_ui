@@ -13,9 +13,6 @@ export './spacer_row.dart';
 
 export 'button/button.dart';
 
-export './loading_page.dart';
-export './loading_content.dart';
-
 export './divider.dart';
 export './tag_text.dart';
 

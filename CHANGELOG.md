@@ -9,3 +9,5 @@
 ## [0.4.1] - 前缀SP -> PI
 
 * PIButton
+
+## [0.4.2] - Button带Icon

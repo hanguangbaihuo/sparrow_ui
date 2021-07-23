@@ -55,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           PIGap.largeXX(),
           PIButton(
             content: '默认 主色按钮Button',
+            icon: Icons.add,
             onPressed: () {},
           ),
           PIGap.large(),
@@ -69,7 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           PIGap.large(),
           PIButton(
-            content: 'Button',
+            content: '添加店长',
+            icon: Icons.add,
             onPressed: () {},
             style: PIButtonStyle(buttonType: PIButtonType.secondary),
           ),

@@ -6,6 +6,7 @@ class PIButton extends StatelessWidget {
   final GestureTapCallback? onPressed;
   final String content;
   final PIButtonStyle style;
+  final IconData? icon;
   // final List<PIButtonStyle> styles;
   // 颜色：文字颜色、边框颜色、填充颜色
 
@@ -13,6 +14,7 @@ class PIButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.content,
+    this.icon,
     this.style = const PIButtonStyle(),
   }) : super(key: key);
 
@@ -35,18 +37,43 @@ class PIButton extends StatelessWidget {
 
     return TextButton(
       onPressed: onPressed,
-      child: Text(
-        content,
-        maxLines: 1,
-        textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
-        style: TextStyle(
-          fontSize: _renderFontSize(),
-          fontWeight: FontWeight.w500,
-          height: SuiFonts.lineHeightContent,
-        ),
-      ),
+      child: _renderContent(),
       style: _renderStyle(theme),
+    );
+  }
+
+  Widget _renderContent() {
+    if (icon == null) return _renderText();
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _renderIcon(),
+        SizedBox(width: 16.rpx),
+        _renderText(),
+      ],
+    );
+  }
+
+  Widget _renderIcon() {
+    return Icon(
+      icon,
+      size: 32.rpx,
+    );
+  }
+
+  Widget _renderText() {
+    return Text(
+      content,
+      maxLines: 1,
+      textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+        fontSize: _renderFontSize(),
+        fontWeight: FontWeight.w500,
+        height: SuiFonts.lineHeightContent,
+      ),
     );
   }
 
