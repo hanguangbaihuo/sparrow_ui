@@ -109,9 +109,9 @@ class PIButton extends StatelessWidget {
   BorderRadiusGeometry _renderRadius() {
     // 小圆角、大圆角
     if (style.buttonRadius == PIRadius.small) {
-      return BorderRadius.circular(PISize.radiusSmall);
+      return PIBorderRadius.small;
     } else if (style.buttonRadius == PIRadius.big) {
-      return BorderRadius.circular(PISize.radiusBig);
+      return PIBorderRadius.big;
     }
 
     // 全圆角：需要根据按钮大小显示

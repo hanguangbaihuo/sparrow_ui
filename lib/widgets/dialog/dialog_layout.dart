@@ -100,7 +100,7 @@ class PIDialogLayout extends StatelessWidget {
         width: width ?? 590.rpx,
         child: Dialog(
           insetPadding: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(borderRadius: PIRadius2.big),
+          shape: RoundedRectangleBorder(borderRadius: PIBorderRadius.big),
           child: Container(
             child: Column(
               mainAxisSize: MainAxisSize.min,
