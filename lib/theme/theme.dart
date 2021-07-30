@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../basic/colors.dart';
 import 'theme_data.dart';
 export 'theme_data.dart';
 

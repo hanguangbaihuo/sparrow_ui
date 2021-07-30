@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sparrow_ui/sparrow_ui.dart';
-import '../basic/colors.dart';
 
 class PIThemeData {
   /// 主色卡
