@@ -127,18 +127,27 @@ class PIButton extends StatelessWidget {
       return BorderSide.none;
     }
 
+    Color borderColor = _renderSecondaryButtonColor(colorSwatch);
+
     // 次按钮
     return BorderSide(
       width: 1.rpx,
-      color: _renderBorderColor(colorSwatch),
+      color: borderColor,
     );
   }
 
   /// 填充色
   MaterialStateProperty<Color> _renderBackgroundColor(
       MaterialColor colorSwatch) {
-    // 主按钮的填充颜色是色卡6
+    // 主按钮的填充颜色
     if (style.buttonType == PIButtonType.primary) {
+      // 判断按钮状态
+      // normal 6，inactive 3，disabled 2
+      if (style.buttonStatus == PIButtonStatus.inactive) {
+        return MaterialStateProperty.all<Color>(colorSwatch[3]!);
+      } else if (style.buttonStatus == PIButtonStatus.disabled) {
+        return MaterialStateProperty.all<Color>(PIColors.gray[3]!);
+      }
       return MaterialStateProperty.all<Color>(colorSwatch[6]!);
     }
 
@@ -153,16 +162,26 @@ class PIButton extends StatelessWidget {
       return MaterialStateProperty.all<Color>(PIColors.white);
     }
 
-    // 次按钮的文字颜色是色卡6
-    return MaterialStateProperty.all<Color>(colorSwatch[6]!);
+    // 次级按钮颜色
+    return MaterialStateProperty.all<Color>(
+      _renderSecondaryButtonColor(colorSwatch),
+    );
   }
 
-  /// 边框色
-  Color _renderBorderColor(MaterialColor colorSwatch) {
-    // 主按钮没有边框颜色
+  /// 次级按钮颜色
+  ///
+  /// 边框、文字颜色相同
+  ///
+  /// 次级按钮边框颜色和文字颜色相同
+  Color _renderSecondaryButtonColor(MaterialColor colorSwatch) {
+    if (style.buttonStatus == PIButtonStatus.inactive) {
+      return colorSwatch[3]!;
+    } else if (style.buttonStatus == PIButtonStatus.disabled) {
+      return colorSwatch[2]!;
+    }
 
-    // 次按钮的边框颜色是色卡3
-    return colorSwatch[3]!;
+    // 次按钮的边框颜色是色卡6
+    return colorSwatch[6]!;
   }
 
   double _renderFontSize() {

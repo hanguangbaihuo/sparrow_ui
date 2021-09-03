@@ -19,13 +19,13 @@ class PIBaseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (icon == null) {
-      return OutlinedButton(
+      return TextButton(
         onPressed: onPressed,
         child: _renderText(),
         style: _renderStyle(context),
       );
     } else {
-      return OutlinedButton.icon(
+      return TextButton.icon(
         onPressed: onPressed,
         icon: Icon(icon),
         label: _renderText(),
