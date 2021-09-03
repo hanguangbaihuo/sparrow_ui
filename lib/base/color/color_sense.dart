@@ -14,4 +14,7 @@ enum PIColorSense {
 
   /// 警告
   warning,
+
+  /// 不可操作的
+  disabled,
 }

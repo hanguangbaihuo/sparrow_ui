@@ -12,6 +12,7 @@ export './bottom_navigation_bar_button.dart';
 export './spacer_row.dart';
 
 export 'button/button.dart';
+export 'form/input.dart';
 
 export './divider.dart';
 export './tag_text.dart';

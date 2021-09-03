@@ -22,10 +22,10 @@ class PIDialogLayout extends StatelessWidget {
   PIDialogLayout({
     Key? key,
     this.title,
-    this.titleText,
+    this.titleWidget,
     this.content,
-    this.contentText,
-    this.contentTextAlign = TextAlign.center,
+    this.contentAlign = TextAlign.center,
+    this.contentWidget,
     this.extra,
     this.cancelText,
     this.cancelTap,
@@ -41,21 +41,21 @@ class PIDialogLayout extends StatelessWidget {
   }) : super(key: key);
 
   /// Widget标题
-  final Widget? title;
+  final Widget? titleWidget;
 
   /// 文本标题
-  /// 如果指定文本标题，使用通用文本标题，否则使用[title]的widget作为标题
-  final String? titleText;
+  /// 如果指定[title]文本标题，使用通用文本标题，否则使用[titleWidget]的widget作为标题
+  final String? title;
 
   /// Widget 内容主体
-  final Widget? content;
+  final Widget? contentWidget;
 
   /// 文本 内容主体
-  /// 如果指定[contentText]文本主体，使用通用文本主体，否则使用[content]的widget作为主体
-  final String? contentText;
+  /// 如果指定[content]文本主体，使用通用文本主体，否则使用[contentWidget]的widget作为主体
+  final String? content;
 
   /// contentText的align方式
-  final TextAlign contentTextAlign;
+  final TextAlign contentAlign;
 
   /// 位于主体内容下，按钮上方的widget
   final Widget? extra;
@@ -153,8 +153,8 @@ class PIDialogLayout extends StatelessWidget {
   }
 
   Widget _renderTitle() {
-    /// 如果指定文本标题，使用通用文本标题，否则使用[title]的widget作为标题
-    if (titleText != null) {
+    /// 如果指定文本标题，使用通用文本标题，否则使用[titleWidget]的widget作为标题
+    if (title != null) {
       return Container(
         margin: EdgeInsets.only(
           top: 80.rpx,
@@ -163,7 +163,7 @@ class PIDialogLayout extends StatelessWidget {
         ),
         height: 44.rpx,
         child: Text(
-          '$titleText',
+          '$title',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Color(0xff000000),
@@ -176,17 +176,17 @@ class PIDialogLayout extends StatelessWidget {
     } else {
       return Container(
         padding: EdgeInsets.only(top: 50.rpx, bottom: 25.rpx),
-        child: title,
+        child: titleWidget,
       );
     }
   }
 
   Widget _renderContent() {
-    /// 如果指定[contentText]文本主体，使用通用文本主体，否则使用[content]的widget作为主体
-    if (contentText != null) {
+    /// 如果指定[content]文本主体，使用通用文本主体，否则使用[contentWidget]的widget作为主体
+    if (content != null) {
       return Text(
-        '$contentText',
-        textAlign: contentTextAlign,
+        '$content',
+        textAlign: contentAlign,
         style: TextStyle(
           color: PIColors.gray[3],
           fontSize: 28.rpx,
@@ -194,7 +194,7 @@ class PIDialogLayout extends StatelessWidget {
       );
     } else {
       return Container(
-        child: content,
+        child: contentWidget,
       );
     }
   }

@@ -31,14 +31,32 @@ class PIDialogResult<T> {
 
 // 比如confirm，返回true或false
 
-Future<bool?> showPIConfirmDialog({
+Future<bool> showPIConfirmDialog({
   required BuildContext context,
-}) {
-  return showPIDialog<bool>(context: context);
+}) async {
+  var res = await showPIDialog<bool>(
+    context: context,
+    title: '再次确认',
+    confirmText: '删除',
+    cancelText: '保留',
+    content: '您确定要删除这条数据吗',
+  );
+  return res ?? false;
 }
 
+/// P 参数类型
+/// R 返回结果类型
+showPIDialogBuilder<P, R>({
+  /// 构建标题
+  String Function(P params)? titleBuilder,
+  Widget Function(P params)? titleWidgetBuilder,
+
+  /// 构建内容
+  String Function(P params)? contentBuilder,
+  Widget Function(P params)? contentWidgetBuilder,
+}) {}
+
 /**
- * 
  * 
  * showPIDialog<T, P>(
  *  context: context,
@@ -56,11 +74,11 @@ Future<T?> showPIDialog<T>({
   required BuildContext context,
   bool barrierDismissible = false,
   Key? key,
-  Widget? title,
-  String? titleText,
-  Widget? content,
-  String? contentText,
-  TextAlign contentTextAlign = TextAlign.center,
+  Widget? titleWidget,
+  String? title,
+  Widget? contentWidget,
+  String? content,
+  TextAlign contentAlign = TextAlign.center,
   Widget? extra,
   String? cancelText,
   Function? cancelTap,
@@ -81,10 +99,10 @@ Future<T?> showPIDialog<T>({
       return PIDialogLayout(
         key: key,
         title: title,
-        titleText: titleText,
+        titleWidget: titleWidget,
         content: content,
-        contentText: contentText,
-        contentTextAlign: contentTextAlign,
+        contentAlign: contentAlign,
+        contentWidget: contentWidget,
         extra: extra,
         cancelText: cancelText,
         cancelTap: cancelTap,
