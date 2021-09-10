@@ -11,7 +11,7 @@ class InputDemo extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.rpx, vertical: 10.rpx),
-            child: PIInput(),
+            // child: PIInput(),
           ),
           ListTile(),
         ],
