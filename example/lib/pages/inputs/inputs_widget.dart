@@ -29,9 +29,13 @@ class InputsWidget {
           CustomTextField(
             placeholder: "请输入内容",
             showPrefixIcon: true,
-            showClearButton: false,
             isSearch: true,
             textInputAction: TextInputAction.search,
+          ),
+          SizedBox(height: 32.rpx),
+          CustomTextField(
+            placeholder: "请输入内容",
+            showBorder: false,
           ),
         ],
       ),
