@@ -24,9 +24,12 @@ class CustomTextField extends StatefulWidget {
     this.prefix,
     this.textInputAction,
     this.onSubmitted,
+    this.handlerSearch,
+    this.cancelText,
     this.showBorder = true,
     this.showPrefixIcon = false,
     this.showClearButton = false,
+    this.isSearch = false,
   }) : super(key: key);
 
   /// 输入框控制器
@@ -89,6 +92,13 @@ class CustomTextField extends StatefulWidget {
   final bool? showBorder;
   final bool? showPrefixIcon;
   final bool? showClearButton;
+  final bool? isSearch;
+
+  /// 清空输入的搜索关键字文字，默认清除
+  final String? cancelText;
+
+  /// 搜索方法的回调函数
+  final Function(String)? handlerSearch;
 
   @override
   State<StatefulWidget> createState() => _CustomTextFieldState();
@@ -187,28 +197,48 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ),
           // hintMaxLines: 1,
           hintMaxLines: widget.hintMaxLines,
-          suffix: widget.suffix,
-          prefix: widget.prefix,
-          suffixIcon: widget.showClearButton == true
-              ? Visibility(
-                  visible: clearButton,
-                  maintainSize: true,
-                  maintainAnimation: true,
-                  maintainState: true,
-                  child: InkWell(
-                    onTap: () {
-                      widget.controller?.text = '';
-                      setState(() {
-                        clearButton = false;
-                      });
-                    },
-                    child: Icon(
-                      Icons.clear,
-                      color: Colors.grey,
+          suffix: widget.isSearch == false
+              ? widget.suffix
+              : InkWell(
+                  onTap: () {
+                    ///移除键盘
+                    FocusScope.of(context).requestFocus(new FocusNode());
+                    bindCancel();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(20.rpx, 0, 20.rpx, 0),
+                    child: Text(
+                      widget.cancelText ?? "取消",
+                      style: TextStyle(
+                        color: Color(0xff606B89),
+                        fontSize: 28.rpx,
+                      ),
                     ),
                   ),
-                )
-              : null,
+                ),
+          prefix: widget.prefix,
+          suffixIcon: widget.isSearch == true
+              ? null
+              : widget.showClearButton == true
+                  ? Visibility(
+                      visible: clearButton,
+                      maintainSize: true,
+                      maintainAnimation: true,
+                      maintainState: true,
+                      child: InkWell(
+                        onTap: () {
+                          widget.controller?.text = '';
+                          setState(() {
+                            clearButton = false;
+                          });
+                        },
+                        child: Icon(
+                          Icons.clear,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    )
+                  : null,
         ),
         // 输入框输入的内容的样式
 
@@ -222,4 +252,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
           if (widget.onSubmitted != null) widget.onSubmitted!(value);
         },
       );
+
+  /// 点击取消按钮
+  bindCancel() {
+    _valueController?.text = "";
+    if (widget.handlerSearch != null) widget.handlerSearch!("");
+    if (widget.onSubmitted is Function) {
+      widget.onSubmitted!('');
+    }
+  }
 }
