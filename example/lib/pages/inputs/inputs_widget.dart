@@ -15,27 +15,46 @@ class InputsWidget {
       child: Column(
         children: [
           CustomTextField(
-            placeholder: "请输入内容",
-            showPrefixIcon: false,
+            textFieldStyle: PITextFieldStyle(
+              placeholder: "请输入内容",
+            ),
+            // placeholder: "请输入内容",
+            // showPrefixIcon: false,
           ),
           SizedBox(height: 32.rpx),
           CustomTextField(
-            placeholder: "请输入内容",
-            showPrefixIcon: true,
-            showClearButton: true,
-            controller: _valueController,
+            textFieldStyle: PITextFieldStyle(
+              placeholder: "请输入内容",
+              showPrefixIcon: true,
+              showClearButton: true,
+              controller: _valueController,
+            ),
+            // placeholder: "请输入内容",
+            // showPrefixIcon: true,
+            // showClearButton: true,
+            // controller: _valueController,
           ),
           SizedBox(height: 32.rpx),
           CustomTextField(
-            placeholder: "请输入内容",
-            showPrefixIcon: true,
-            isSearch: true,
-            textInputAction: TextInputAction.search,
+            textFieldStyle: PITextFieldStyle(
+              placeholder: "请输入内容",
+              showPrefixIcon: true,
+              isSearch: true,
+              textInputAction: TextInputAction.search,
+            ),
+            // placeholder: "请输入内容",
+            // showPrefixIcon: true,
+            // isSearch: true,
+            // textInputAction: TextInputAction.search,
           ),
           SizedBox(height: 32.rpx),
           CustomTextField(
-            placeholder: "请输入内容",
-            showBorder: false,
+            // placeholder: "请输入内容",
+            // showBorder: false,
+            textFieldStyle: PITextFieldStyle(
+              placeholder: "请输入内容",
+              showBorder: false,
+            ),
           ),
         ],
       ),
