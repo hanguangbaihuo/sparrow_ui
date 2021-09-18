@@ -12,7 +12,7 @@ class SliverDemo extends StatelessWidget {
         slivers: [
           SliverAppBar(
             // title: Text('Sliver Demo'),
-            // pinned: true, // 固定
+            pinned: true, // 固定
             floating: true, // 与列表分离
             snap: true, // 不允许在中间停留，关闭或打开
             expandedHeight: 300,

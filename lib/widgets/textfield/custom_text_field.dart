@@ -6,9 +6,9 @@ import 'package:sparrow_ui/style/text_field_style.dart';
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     Key? key,
-    this.textFieldStyle,
+    this.style,
   }) : super(key: key);
-  final PIBaseStyle? textFieldStyle;
+  final PIBaseStyle? style;
 
   @override
   State<StatefulWidget> createState() => _CustomTextFieldState();
@@ -17,13 +17,12 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   bool clearButton = false;
   TextEditingController? _valueController;
-  PITextFieldStyle? _textFieldStyle;
+  PITextFieldStyle? _style;
   @override
   void initState() {
     super.initState();
-    _textFieldStyle =
-        (widget.textFieldStyle ?? PITextFieldStyle()) as PITextFieldStyle?;
-    _valueController = _textFieldStyle?.controller;
+    _style = (widget.style ?? PITextFieldStyle()) as PITextFieldStyle?;
+    _valueController = _style?.controller;
     _valueController?.addListener(() {
       String? value = _valueController?.text.trim();
       if (value!.isNotEmpty) {
@@ -39,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return _textFieldStyle?.maxLines == 1
+    return _style?.maxLines == 1
         ? Container(
             alignment: Alignment.centerLeft,
             height: 80.rpx,
@@ -53,22 +52,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   ///textfield
   Widget textField() => TextField(
-        textAlign: _textFieldStyle?.textAlign ?? TextAlign.left,
-        controller: _textFieldStyle?.controller,
-        keyboardType: _textFieldStyle?.keyboardType,
-        maxLines: _textFieldStyle?.maxLines,
-        minLines: _textFieldStyle?.minLines,
-        maxLength: _textFieldStyle?.maxLength,
+        textAlign: _style?.textAlign ?? TextAlign.left,
+        controller: _style?.controller,
+        keyboardType: _style?.keyboardType,
+        maxLines: _style?.maxLines,
+        minLines: _style?.minLines,
+        maxLength: _style?.maxLength,
         // cursorWidth: 1.0,
-        autofocus: _textFieldStyle?.autoFocus ?? false,
+        autofocus: _style?.autoFocus ?? false,
 
         // 设置弹出键盘为亮色模式
         keyboardAppearance: Brightness.light,
-        textInputAction:
-            _textFieldStyle?.textInputAction ?? TextInputAction.done,
-        inputFormatters: _textFieldStyle?.inputFormatters,
+        textInputAction: _style?.textInputAction ?? TextInputAction.done,
+        inputFormatters: _style?.inputFormatters,
         decoration: InputDecoration(
-          prefixIcon: _textFieldStyle?.showPrefixIcon == true
+          prefixIcon: _style?.showPrefixIcon == true
               ? Icon(
                   Icons.search,
                   size: 36.rpx,
@@ -76,44 +74,43 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 )
               : null,
           // 给输入框内容添加内边距可以使内容居中
-          contentPadding: _textFieldStyle?.contentPadding ??
+          contentPadding: _style?.contentPadding ??
               EdgeInsets.fromLTRB(20.rpx, 0.rpx, 10.rpx, 0.rpx),
           // contentPadding: contentPadding ?? EdgeInsets.all(10.rpx),
-          border: _textFieldStyle?.showBorder == false
+          border: _style?.showBorder == false
               ? OutlineInputBorder(
                   borderSide: BorderSide.none,
                 )
               : null,
           // 可使用的边框
-          enabledBorder: _textFieldStyle?.showBorder == true
+          enabledBorder: _style?.showBorder == true
               ? OutlineInputBorder(
                   borderRadius: PIBorderRadius.small,
                   borderSide: BorderSide(
-                      color: _textFieldStyle?.borderColor ?? PIColors.gray[2]!,
-                      width: _textFieldStyle?.borderWidth ?? 1.rpx),
+                      color: _style?.borderColor ?? PIColors.gray[2]!,
+                      width: _style?.borderWidth ?? 1.rpx),
                 )
               : null,
           // 聚焦的边框
-          focusedBorder: _textFieldStyle?.showBorder == true
+          focusedBorder: _style?.showBorder == true
               ? OutlineInputBorder(
                   borderRadius: PIBorderRadius.small,
                   borderSide: BorderSide(
-                      color: _textFieldStyle?.borderFocusColor ??
-                          PIColors.gray[5]!,
-                      width: _textFieldStyle?.borderWidth ?? 1.rpx),
+                      color: _style?.borderFocusColor ?? PIColors.gray[5]!,
+                      width: _style?.borderWidth ?? 1.rpx),
                 )
               : null,
           // 没有内容时候的占位符与样式
-          hintText: _textFieldStyle?.placeholder ?? "",
-          hintStyle: _textFieldStyle?.placeholderStyle ??
+          hintText: _style?.placeholder ?? "",
+          hintStyle: _style?.placeholderStyle ??
               TextStyle(
                 color: PIColors.gray[4]!,
                 fontSize: 28.rpx,
               ),
           // hintMaxLines: 1,
-          hintMaxLines: _textFieldStyle?.hintMaxLines,
-          suffix: _textFieldStyle?.isSearch == false
-              ? _textFieldStyle?.suffix
+          hintMaxLines: _style?.hintMaxLines,
+          suffix: _style?.isSearch == false
+              ? _style?.suffix
               : InkWell(
                   onTap: () {
                     ///移除键盘
@@ -123,7 +120,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   child: Container(
                     padding: EdgeInsets.fromLTRB(20.rpx, 0, 20.rpx, 0),
                     child: Text(
-                      _textFieldStyle?.cancelText ?? "取消",
+                      _style?.cancelText ?? "取消",
                       style: TextStyle(
                         color: Color(0xff606B89),
                         fontSize: 28.rpx,
@@ -131,10 +128,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     ),
                   ),
                 ),
-          prefix: _textFieldStyle?.prefix,
-          suffixIcon: _textFieldStyle?.isSearch == true
+          prefix: _style?.prefix,
+          suffixIcon: _style?.isSearch == true
               ? null
-              : _textFieldStyle?.showClearButton == true
+              : _style?.showClearButton == true
                   ? Visibility(
                       visible: clearButton,
                       maintainSize: true,
@@ -142,7 +139,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       maintainState: true,
                       child: InkWell(
                         onTap: () {
-                          _textFieldStyle?.controller?.text = '';
+                          _style?.controller?.text = '';
                           setState(() {
                             clearButton = false;
                           });
@@ -158,24 +155,22 @@ class _CustomTextFieldState extends State<CustomTextField> {
         // 输入框输入的内容的样式
 
         textAlignVertical: TextAlignVertical.center,
-        style: _textFieldStyle?.textStyle ??
+        style: _style?.textStyle ??
             TextStyle(
               color: PIColors.gray[10]!,
               fontSize: 28.rpx,
             ),
         onSubmitted: (value) {
-          if (_textFieldStyle?.onSubmitted != null)
-            _textFieldStyle?.onSubmitted!(value);
+          if (_style?.onSubmitted != null) _style?.onSubmitted!(value);
         },
       );
 
   /// 点击取消按钮
   bindCancel() {
     _valueController?.text = "";
-    if (_textFieldStyle?.handlerSearch != null)
-      _textFieldStyle?.handlerSearch!("");
-    if (_textFieldStyle?.onSubmitted is Function) {
-      _textFieldStyle?.onSubmitted!('');
+    if (_style?.handlerSearch != null) _style?.handlerSearch!("");
+    if (_style?.onSubmitted is Function) {
+      _style?.onSubmitted!('');
     }
   }
 }

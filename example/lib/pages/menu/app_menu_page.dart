@@ -2,6 +2,7 @@ import 'package:app/common.dart';
 import 'package:app/pages/buttons/buttons_page.dart';
 import 'package:app/pages/entitys/app_menu_entity.dart';
 import 'package:app/pages/inputs/inputs_page.dart';
+import 'package:app/pages/sliver_demo/sliver_demo.dart';
 
 import 'app_menu_widget.dart';
 
@@ -23,6 +24,8 @@ class _AppMenuPageState extends State<AppMenuPage> with AppMenuWidget {
     AppMenuEntity appMenu = AppMenuEntity(id: 1, section: "Buttons");
     sourceList.add(appMenu);
     appMenu = AppMenuEntity(id: 2, section: "TextFiled");
+    sourceList.add(appMenu);
+    appMenu = AppMenuEntity(id: 3, section: "sliver");
     sourceList.add(appMenu);
     _refresh();
   }
@@ -50,6 +53,8 @@ class _AppMenuPageState extends State<AppMenuPage> with AppMenuWidget {
         return ButtonsPage();
       case 2:
         return InputPage();
+      case 3:
+        return SliverDemo();
     }
     return Container();
   }
