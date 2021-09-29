@@ -1,5 +1,5 @@
 import 'package:app/common.dart';
-import 'home_page.dart';
+import 'package:app/pages/menu/app_menu_page.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
             final flutterThemeData = ThemeData.from(colorScheme: colorScheme);
             return MaterialApp(
               title: 'Sparrow UI Example',
-              theme: flutterThemeData,
-              home: MyHomePage(title: 'Sparrow UI Example'),
+              // home: MyHomePage(title: 'Sparrow UI Example'),
+              home: AppMenuPage(),
             );
           },
         );
