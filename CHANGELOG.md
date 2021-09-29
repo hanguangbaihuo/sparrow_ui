@@ -11,3 +11,5 @@
 * PIButton
 
 ## [0.4.2] - Button带Icon
+
+## [0.4.3] - Button status: normal, inactive, disabled
